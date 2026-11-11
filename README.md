@@ -1,24 +1,20 @@
 # SERS_GS2
 
-Lana Namie Kano Ozeki - RM 569795
-Luan de Araujo Carneiro - RM 573691
-Pedro Ribeiro Lopes - RM 570083
-
 # Citizen Assist AI — Energia Sustentável
 
 ## Sobre o projeto
 
-O **Citizen Assist AI** é um chatbot educativo que ajuda famílias a compreender o consumo de energia relacionado ao aquecimento de água e a comparar alternativas para reduzir gastos e impactos ambientais.
+O Citizen Assist AI é um chatbot que ajuda famílias a compreender o consumo de energia relacionado ao aquecimento de água e banhos e a comparar alternativas para reduzir gastos e impactos ambientais.
 
 O estudo de caso compara:
 
-1. **Chuveiro elétrico convencional**;
-2. **Redução do tempo de banho e uso de potência econômica**;
-3. **Aquecimento solar térmico de água**, mantendo apoio elétrico para a parcela de demanda não atendida pelo sol.
+1. Chuveiro elétrico convencional;
+2. Redução do tempo de banho e uso de potência econômica;
+3. Aquecimento solar térmico de água, mantendo apoio elétrico para a parcela de demanda não atendida pelo sol.
 
-O público-alvo é uma família residencial de referência com quatro moradores, em São Paulo (SP).
+O público-alvo é uma família residencial de referência com quatro moradores, em São Paulo (SP), de classe média. 
 
-> Este projeto é uma simulação educativa. Os valores são estimativas baseadas nas premissas descritas em `premissas_e_calculos.md`, e não substituem uma avaliação técnica da residência ou um orçamento de instalação.
+Este projeto é uma simulação educativa. Os valores são estimativas baseadas nas premissas descritas em `premissas_e_calculos.md`, e não substituem uma avaliação técnica da residência ou um orçamento de instalação.
 
 ## Objetivos
 
@@ -34,7 +30,7 @@ O chatbot utiliza a API da OpenAI com o modelo `gpt-4o-mini`. Quando a pergunta 
 
 O projeto foi desenvolvido em Python e testado no Google Colab.
 
-## Estrutura sugerida do repositório
+## Estrutura do repositório
 
 ```text
 SERS_GS2/
@@ -48,11 +44,7 @@ SERS_GS2/
 └── .gitignore
 ```
 
-O arquivo `citizen_assist_ai.ipynb` deve ser exportado do Google Colab usando **Arquivo > Fazer download > Fazer download do .ipynb** e adicionado a este repositório.
-
 ## Como executar
-
-### Opção 1 — Google Colab (recomendado)
 
 1. Abra o notebook `citizen_assist_ai.ipynb` no Google Colab.
 2. Configure uma chave da API da OpenAI nos **Secrets** do Colab com o nome `OPENAI_API_KEY`.
@@ -69,18 +61,6 @@ from openai import OpenAI
 api_key = userdata.get("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 ```
-
-**Nunca publique sua chave de API no GitHub, no notebook ou em capturas de tela.**
-
-### Opção 2 — Ambiente Python local
-
-Instale as dependências:
-
-```bash
-pip install -r requirements.txt
-```
-
-Configure a variável de ambiente `OPENAI_API_KEY` e adapte a célula de inicialização do Colab para ler essa variável. O notebook preparado para Colab pode precisar de pequenos ajustes para execução local.
 
 ## Cenários de referência
 
@@ -105,11 +85,6 @@ Os resultados são cenários simplificados, não previsões garantidas. Consulte
 - A recomendação final deve considerar a instalação hidráulica, espaço disponível, perfil de consumo, segurança e avaliação de profissional habilitado.
 
 ## Integrantes
-
-Preencher os nomes completos e RMs em `ENTREGA.txt`.
-
-## Entrega
-
-- Repositório: https://github.com/lanaozeki08-jpg/SERS_GS2
-- Vídeo de apresentação: inserir o link não listado em `ENTREGA.txt`.
-- Registros dos testes: completar `testes.md` com perguntas realmente feitas e respostas observadas.
+Lana Namie Kano Ozeki - RM 569795
+Luan de Araujo Carneiro - RM 573691
+Pedro Ribeiro Lopes - RM 570083
