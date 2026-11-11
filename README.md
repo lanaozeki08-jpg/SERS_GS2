@@ -78,12 +78,8 @@ Para instalar a principal dependência:
 ```text
 SERS_GS2/
 ├── README.md
-├── citizen_assist_ai.ipynb
-├── premissas_e_calculos.md
-├── referencias.md
+├── SERS.GS2.ipynb
 ├── testes.md
-├── ENTREGA.txt
-└── .gitignore
 ```
 
 ## Como executar
