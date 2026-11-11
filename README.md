@@ -24,6 +24,49 @@ Este projeto é uma simulação educativa. Os valores são estimativas baseadas 
 - Estimar a redução de emissões associadas à eletricidade consumida;
 - Explicar resultados em linguagem simples por meio de uma conversa com IA.
 
+## Tecnologias e bibliotecas
+
+- Python: linguagem utilizada no desenvolvimento.
+- OpenAI API: integração com inteligência artificial.
+- GPT-4o-mini: modelo utilizado para interpretar perguntas e elaborar respostas.
+- Google Colab: ambiente utilizado para desenvolvimento e execução.
+- Biblioteca openai: comunicação com a API da OpenAI.
+- json: tratamento dos argumentos e resultados das ferramentas.
+- getpass / Google Colab Secrets: proteção e gerenciamento da chave de API.
+
+## Premissas da simulação
+
+- Número de moradores: 4
+- Banhos por pessoa: 1 por dia
+- Duração convencional do banho: 15 minutos
+- Potência convencional do chuveiro: 5,5 kW
+- Duração econômica do banho: 10 minutos
+- Potência no cenário econômico: 3,5 kW
+- Tarifa de energia: R$ 0,85/kWh
+- Dias no mês: 30 dias
+- Cobertura hipotética do aquecimento solar: 90%
+- Investimento de referência: R$ 5.000
+
+Os valores são premissas simplificadas, não representam necessariamnente o consumo de uma residência real nem uma cotação comercial.
+
+## Comparação dos cenários: 
+
+| Cenário | Consumo mensal estimado | Custo mensal estimado |
+|---|---:|---:|
+| Chuveiro elétrico (15 min por pessoa, 5,5 kW) | 165 kWh | R$ 140,25 |
+| Banho reduzido (10 min por pessoa, 3,5 kW) | 70 kWh | R$ 59,50 |
+| Aquecimento solar (90% de cobertura térmica, com apoio elétrico) | 16,5 kWh | R$ 14,03 |
+| Hábitos econômicos + solar | 7 kWh | R$ 5,95 |
+
+## Bibliiotecas e dependências: 
+
+openai: integração com os modelos de inteligência artificial da OpenAI.
+As bibliotecas json e getpass fazem parte da biblioteca padrão do Python. No Google Colab, também é utilizado o recurso google.colab.userdata para acessar a chave de API armazenada nos Secrets.
+
+Para instalar a principal dependência:
+
+!pip install openai
+
 ## Como o chatbot funciona
 
 O chatbot utiliza a API da OpenAI com o modelo `gpt-4o-mini`. Quando a pergunta exige cálculos, o modelo pode acionar a ferramenta Python `calcular_consumo_energia`, que executa as fórmulas determinísticas e devolve os resultados para a IA explicar ao usuário.
@@ -52,29 +95,6 @@ SERS_GS2/
 4. Execute as células na ordem.
 5. Converse com o Citizen Assist AI na célula de interação.
 
-O código deve recuperar a chave sem exibi-la:
-
-```python
-from google.colab import userdata
-from openai import OpenAI
-
-api_key = userdata.get("OPENAI_API_KEY")
-client = OpenAI(api_key=api_key)
-```
-
-## Cenários de referência
-
-Com as premissas documentadas, os resultados aproximados são:
-
-| Cenário | Consumo mensal estimado | Custo mensal estimado |
-|---|---:|---:|
-| Chuveiro elétrico (15 min por pessoa, 5,5 kW) | 165 kWh | R$ 140,25 |
-| Banho reduzido (10 min por pessoa, 3,5 kW) | 70 kWh | R$ 59,50 |
-| Aquecimento solar (90% de cobertura térmica, com apoio elétrico) | 16,5 kWh | R$ 14,03 |
-| Hábitos econômicos + solar | 7 kWh | R$ 5,95 |
-
-Os resultados são cenários simplificados, não previsões garantidas. Consulte `premissas_e_calculos.md` para fórmulas, limitações e retorno estimado do investimento.
-
 ## Limitações
 
 - A tarifa de R$ 0,85/kWh é uma premissa simplificada para simulação; a conta real pode incluir tributos, bandeiras, contribuição de iluminação pública e regras tarifárias específicas.
@@ -83,6 +103,17 @@ Os resultados são cenários simplificados, não previsões garantidas. Consulte
 - Os custos de instalação usados para estimar retorno são cenários hipotéticos, não cotações de fornecedores.
 - A estimativa de emissões usa um fator médio da eletricidade brasileira e não representa uma análise de ciclo de vida dos equipamentos.
 - A recomendação final deve considerar a instalação hidráulica, espaço disponível, perfil de consumo, segurança e avaliação de profissional habilitado.
+
+## Referências:
+
+- Empresa de Pesquisa Energética (EPE) — Atlas da Eficiência Energética Brasil 2024.
+- Empresa de Pesquisa Energética (EPE) — Balanço Energético Nacional 2026.
+- Enel São Paulo — Tarifas de energia elétrica.
+- INMETRO — Equipamentos de aquecimento solar de água.
+- https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/atlas-de-eficiencia-energetica-brasil-2024
+- https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/PublicacoesArquivos/publicacao-975/topico-847/BEN_S%C3%ADntese_2026_PT.pdf
+- https://www.enel.com.br/pt-saopaulo/Para_Voce/tarifa-de-energia-eletrica.html
+- https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/equipamentos-de-aquecimento-solar-de-agua
 
 ## Integrantes
 Lana Namie Kano Ozeki - RM 569795
