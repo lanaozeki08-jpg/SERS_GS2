@@ -79,7 +79,7 @@ Para instalar a principal dependência:
 SERS_GS2/
 ├── README.md
 ├── SERS.GS2.ipynb
-├── testes.md
+├── testes.pdf
 ```
 
 ## Como executar
