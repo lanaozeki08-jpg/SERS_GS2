@@ -1,5 +1,3 @@
-# SERS_GS2
-
 # Citizen Assist AI — Energia Sustentável
 
 ## Sobre o projeto
@@ -26,10 +24,10 @@ Este projeto é uma simulação educativa. Os valores são estimativas baseadas 
 
 ## Tecnologias e bibliotecas
 
-- Python: linguagem utilizada no desenvolvimento.
-- OpenAI API: integração com inteligência artificial.
+- Python: linguagem de programação.
+- OpenAI API: conexão com o modelo de IA.
 - GPT-4o-mini: modelo utilizado para interpretar perguntas e elaborar respostas.
-- Google Colab: ambiente utilizado para desenvolvimento e execução.
+- Google Colab: ambiente de desenvolvimento.
 - Biblioteca openai: comunicação com a API da OpenAI.
 - json: tratamento dos argumentos e resultados das ferramentas.
 - getpass / Google Colab Secrets: proteção e gerenciamento da chave de API.
@@ -58,7 +56,7 @@ Os valores são premissas simplificadas, não representam necessariamnente o con
 | Aquecimento solar (90% de cobertura térmica, com apoio elétrico) | 16,5 kWh | R$ 14,03 |
 | Hábitos econômicos + solar | 7 kWh | R$ 5,95 |
 
-## Bibliiotecas e dependências: 
+## Bibliotecas e dependências: 
 
 openai: integração com os modelos de inteligência artificial da OpenAI.
 As bibliotecas json e getpass fazem parte da biblioteca padrão do Python. No Google Colab, também é utilizado o recurso google.colab.userdata para acessar a chave de API armazenada nos Secrets.
@@ -69,9 +67,11 @@ Para instalar a principal dependência:
 
 ## Como o chatbot funciona
 
-O chatbot utiliza a API da OpenAI com o modelo `gpt-4o-mini`. Quando a pergunta exige cálculos, o modelo pode acionar a ferramenta Python `calcular_consumo_energia`, que executa as fórmulas determinísticas e devolve os resultados para a IA explicar ao usuário.
-
-O projeto foi desenvolvido em Python e testado no Google Colab.
+1. O usuário envia uma pergunta.
+2. O modelo interpreta a mensagem.
+3. Quando necessário, chama a ferramenta de cálculo.
+4. O Python realiza os cálculos.
+5. O modelo utiliza os resultados para responder.
 
 ## Estrutura do repositório
 
@@ -79,7 +79,6 @@ O projeto foi desenvolvido em Python e testado no Google Colab.
 SERS_GS2/
 ├── README.md
 ├── citizen_assist_ai.ipynb
-├── requirements.txt
 ├── premissas_e_calculos.md
 ├── referencias.md
 ├── testes.md
@@ -90,10 +89,11 @@ SERS_GS2/
 ## Como executar
 
 1. Abra o notebook `citizen_assist_ai.ipynb` no Google Colab.
-2. Configure uma chave da API da OpenAI nos **Secrets** do Colab com o nome `OPENAI_API_KEY`.
+2. Configure uma chave da API da OpenAI nos Secrets do Colab com o nome `OPENAI_API_KEY`.
 3. Ative a permissão de acesso ao segredo para o notebook.
 4. Execute as células na ordem.
 5. Converse com o Citizen Assist AI na célula de interação.
+6. !pip install openai
 
 ## Limitações
 
@@ -116,6 +116,6 @@ SERS_GS2/
 - https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/equipamentos-de-aquecimento-solar-de-agua
 
 ## Integrantes
-Lana Namie Kano Ozeki - RM 569795
-Luan de Araujo Carneiro - RM 573691
-Pedro Ribeiro Lopes - RM 570083
+- Lana Namie Kano Ozeki - RM 569795
+- Luan de Araujo Carneiro - RM 573691
+- Pedro Ribeiro Lopes - RM 570083
